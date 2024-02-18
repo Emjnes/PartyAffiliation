@@ -1,15 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+class PartyAffiliationChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Display menu and prompt user for input
+        System.out.println("Party Affiliation Menu:");
+        System.out.println("D - Democrat");
+        System.out.println("R - Republican");
+        System.out.println("I - Independent");
+        System.out.print("Enter your party affiliation (D/R/I): ");
+        String affiliation = scanner.next().toUpperCase(); // Convert input to uppercase
+
+        // Determine response based on user input using cascaded if structure
+        switch (affiliation) {
+            case "D" -> System.out.println("You get a Democratic Donkey.");
+            case "R" -> System.out.println("You get a Republican Elephant.");
+            case "I" -> System.out.println("You get an Independent Person.");
+            default -> System.out.println("You get an Other.");
         }
+
+        scanner.close();
     }
 }
